@@ -1,5 +1,10 @@
-# Install Chocolatey
+# Chocolatey installeren
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-#  install Git
+# Git installeren
 choco install git -y
+
+# Pad handmatig toevoegen (mocht installatie niet goed gegaan zijn)
+$env:Path += ";C:\Program Files\Git\cmd;C:\Program Files\Git\bin"
+
+git --version
